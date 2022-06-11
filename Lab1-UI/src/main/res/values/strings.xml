@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Labs20221-Gr02</string>
+    <string name="selected_item">Selected item:</string>
+    <string-array name="grades">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otro</item>
+    </string-array>
 </resources>
