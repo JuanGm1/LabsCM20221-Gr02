@@ -1,13 +1,11 @@
 package co.com.udea.compumovil.gr02_20221.lab1
 
-import android.app.Activity
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +16,16 @@ class MainActivity : AppCompatActivity() {
         val grades = resources.getStringArray(R.array.grades)
         val spinner: Spinner = findViewById(R.id.academicGrade)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, grades)
+        val button: Button = findViewById(R.id.buttonDate)
+        val calendar= Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val edittext:EditText = findViewById(R.id.editTextDate2)
+
         spinner.adapter = adapter
 
+        /*Shows the list with diferents grades*/
         spinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -39,6 +45,19 @@ class MainActivity : AppCompatActivity() {
                 // write code to perform some action
             }
         }
+
+        
+        /*Shows the calendar for the birth date*/
+        button.setOnClickListener{
+            val datePickerDialog = DatePickerDialog(this@MainActivity, DatePickerDialog.OnDateSetListener
+            { view, year, monthOfYear, dayOfMonth ->
+
+                edittext.setText("" + dayOfMonth + " - " + (monthOfYear+1) + " - " + year)
+
+            }, year, month, day)
+            datePickerDialog.show()
+        }
+
     }
 }
 
