@@ -61,7 +61,7 @@
         android:id="@+id/labelNames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="324dp"
         android:layout_marginRight="324dp"
         android:fontFamily="@font/roboto_bold"
@@ -138,9 +138,11 @@
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:enabled="false"
         android:fontFamily="@font/roboto_bold"
         android:gravity="center"
-        android:inputType="date"
+        android:inputType="none"
+        android:onClick="goToContactActivity"
         android:text="fecha"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,5 +157,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDate" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:onClick="goToContactActivity"
+        android:text="Siguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonFemale" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
